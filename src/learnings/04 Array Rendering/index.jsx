@@ -80,3 +80,52 @@ export function UserDetailsValidation(){
         })}
     </div>
 }
+
+
+export function UserDetailsValidationByProps(){
+    const [users, setUsers] = useState([
+        {
+            name: "kiran",
+            age: 16,
+        },
+        {
+            name: "ravi",
+            age: 17,
+        },
+        {
+            name: "ramu",
+            age: 21,
+        },
+        {
+            name: "sai",
+            age: 25,
+        }
+    ])
+
+    return <div>
+        <h2>Valid Users:</h2>
+        {users.map((user)=>{
+            if(user.age > 18){
+                return <User name={user.name} age={user.age}/>
+            }
+        })}
+
+        <h2>InValid Users:</h2>
+        {users.map((user)=>{
+            if(user.age < 18){
+                return <User name={user.name} age={user.age}/>
+            }
+        })}
+    </div>
+}
+
+export function User(props) {
+    return <div>
+        {props.name}
+        <br />
+        {props.age}
+        <br />
+        <hr />
+    </div>
+}
+
