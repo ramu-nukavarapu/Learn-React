@@ -33,7 +33,7 @@ export function UserDetails(){
 
 // we can also render based on conditions
 export function UserDetailsValidation(){
-    const [users, setUsers] = useState([
+    const [validUsers, setValidUsers] = useState([
         {
             name: "kiran",
             age: 16,
@@ -54,7 +54,7 @@ export function UserDetailsValidation(){
 
     return <div>
         <h2>Valid Users:</h2>
-        {users.map((user)=>{
+        {validUsers.map((user)=>{
             if(user.age > 18){
                 return <div>
                     {user.name}
@@ -67,7 +67,7 @@ export function UserDetailsValidation(){
         })}
 
         <h2>InValid Users:</h2>
-        {users.map((user)=>{
+        {validUsers.map((user)=>{
             if(user.age < 18){
                 return <div>
                     {user.name}
@@ -83,7 +83,7 @@ export function UserDetailsValidation(){
 
 
 export function UserDetailsValidationByProps(){
-    const [users, setUsers] = useState([
+    const [validUsersByProps, setValidUsersByProps] = useState([
         {
             name: "kiran",
             age: 16,
@@ -104,14 +104,14 @@ export function UserDetailsValidationByProps(){
 
     return <div>
         <h2>Valid Users:</h2>
-        {users.map((user)=>{
+        {validUsersByProps.map((user)=>{
             if(user.age > 18){
                 return <User name={user.name} age={user.age}/>
             }
         })}
 
         <h2>InValid Users:</h2>
-        {users.map((user)=>{
+        {validUsersByProps.map((user)=>{
             if(user.age < 18){
                 return <User name={user.name} age={user.age}/>
             }
