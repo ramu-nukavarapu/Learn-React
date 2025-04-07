@@ -1,4 +1,5 @@
 import { BrowserRouter as Router, Route, Routes } from 'react-router-dom'
+import { Navigation } from '../07 UseNavigate Hook'
 
 export function Signup() {
     return <div>
@@ -27,6 +28,7 @@ export function Signin() {
 // these routes can be triggered by link element with attribute 'to' and useNavigate hook
 export function Routing(){
     return (<Router>
+        <Navigation />
         <Routes>
             <Route path='/signup' element={<Signup/>}></Route>
             <Route path='/signin' element={<Signin/>}></Route>
